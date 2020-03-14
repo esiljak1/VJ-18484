@@ -1,5 +1,7 @@
 package ba.unsa.etf.rma.vj_18484;
 
+import androidx.annotation.NonNull;
+
 public class Movie {
     private String title;
     private String genre;
@@ -13,5 +15,11 @@ public class Movie {
         this.releaseDate = releaseDate;
         this.homepage = homepage;
         this.overview = overview;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return title + "\n" + genre;
     }
 }
