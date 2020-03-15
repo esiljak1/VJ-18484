@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         editText = (EditText)findViewById(R.id.editText);
 
         entries = MovieBuff.getInstance().getMovies();
-        adapter = new MovieListAdapter(this, R.layout.list_element, R.id.itemName, entries);
+        adapter = new MovieListAdapter(this, R.layout.list_element, entries);
 
         listView.setAdapter(adapter);
 
