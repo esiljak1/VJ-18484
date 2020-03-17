@@ -5,9 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -41,8 +41,8 @@ public class MovieListAdapter extends ArrayAdapter<Movie> {
             newView = (LinearLayout)convertView;
         }
         Movie instance = getItem(position);
-        EditText editText2 = (EditText)newView.findViewById(R.id.editText2);
-        EditText editText4 = (EditText)newView.findViewById(R.id.editText4);
+        TextView editText2 = (TextView) newView.findViewById(R.id.editText2);
+        TextView editText4 = (TextView)newView.findViewById(R.id.editText4);
         ImageView icon = (ImageView)newView.findViewById(R.id.icon);
 
         editText2.setText(instance.getTitle());

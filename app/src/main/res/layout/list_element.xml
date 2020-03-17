@@ -25,22 +25,16 @@
             android:layout_height="80dp"
             android:orientation="vertical">
 
-                <EditText
+                <TextView
                     android:id="@+id/editText2"
-                    android:layout_width="338dp"
-                    android:layout_height="67dp"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Title" />
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="TextView" />
 
-                <EditText
+                <TextView
                     android:id="@+id/editText4"
-                    android:layout_width="115dp"
-                    android:layout_height="66dp"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Genre" />
+                    android:layout_width="match_parent"
+                    android:layout_height="39dp"
+                    android:text="TextView" />
         </LinearLayout>
 </LinearLayout>
