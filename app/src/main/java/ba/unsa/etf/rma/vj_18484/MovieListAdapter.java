@@ -47,13 +47,13 @@ public class MovieListAdapter extends ArrayAdapter<Movie> {
 
         editText2.setText(instance.getTitle());
         editText4.setText(instance.getGenre());
-//        if(instance.getGenre().equals("Action")){
-//            icon.setImageResource(R.drawable.action);
-//        }else if(instance.getGenre().equals("Comedy")){
-//            icon.setImageResource(R.drawable.comedy);
-//        }else{
-//            icon.setImageResource(R.drawable.drama);
-//        }
+        if(instance.getGenre().equals("Action")){
+            icon.setImageResource(R.drawable.action1);
+        }else if(instance.getGenre().equals("Comedy")){
+            icon.setImageResource(R.drawable.comedy);
+        }else{
+            icon.setImageResource(R.drawable.drama);
+        }
 
         return newView;
     }
