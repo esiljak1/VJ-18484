@@ -19,13 +19,6 @@ public class MainActivity extends AppCompatActivity {
     private List<Movie> entries;
     private MovieListAdapter adapter;
 
-    private void listItemClickListener(AdapterView<?> parent, View view, int position, long id){
-        Intent movieDetailIntent = new Intent(this, MovieDetailActivity.class);
-        Movie movie = adapter.getItem(position);
-        movieDetailIntent.putExtra("title", movie.getTitle());
-        this.startActivity(movieDetailIntent);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,17 +28,23 @@ public class MainActivity extends AppCompatActivity {
         listView = (ListView)findViewById(R.id.listView);
         editText = (EditText)findViewById(R.id.editText);
 
+        entries = MovieBuff.getInstance().getMovies();
+        adapter = new MovieListAdapter(this, R.layout.list_element, R.id.itemName, entries);
+
+        listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                listItemClickListener(parent, view, position, id);
+                Intent movieDetailIntent = new Intent(MainActivity.this, MovieDetailActivity.class);
+                Movie movie = adapter.getItem(position);
+                movieDetailIntent.putExtra("title", movie.getTitle());
+                movieDetailIntent.putExtra("genre", movie.getGenre());
+                movieDetailIntent.putExtra("releaseDate", movie.getReleaseDate());
+                movieDetailIntent.putExtra("homepage", movie.getHomepage());
+                movieDetailIntent.putExtra("overview", movie.getOverview());
+                MainActivity.this.startActivity(movieDetailIntent);
             }
         });
-
-        entries = MovieBuff.getInstance().getMovies();
-        adapter = new MovieListAdapter(this, R.layout.list_element, entries);
-
-        listView.setAdapter(adapter);
 
     }
 }
